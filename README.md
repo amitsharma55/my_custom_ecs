@@ -12,25 +12,25 @@
 ## Pre-requisites:
 1.	Build an docker image using given docker file.
 ```bash
-    - docker build -t hello-world . 
-    - docker tag hello-world <aws_account_id>.dkr.ecr.region.amazonaws.com/hello-repository
+    docker build -t hello-world . 
+    docker tag hello-world <aws_account_id>.dkr.ecr.region.amazonaws.com/hello-repository
 ```
 2.	Tag the image for AWS ECR.
 ```bash
-    - docker tag hello-world <aws_account_id>.dkr.ecr.region.amazonaws.com/hello-repository
+    docker tag hello-world <aws_account_id>.dkr.ecr.region.amazonaws.com/hello-repository
 ```
 
 3.	Create the repo in ECR using AWS CLI.
 ```bash
-    - aws ecr create-repository --repository-name hello-repository --region region
+    aws ecr create-repository --repository-name hello-repository --region region
 ```
 
 4.	Push the docker image in ECR by authenicating with ECR
 ```bash
-    - aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com
+    aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com
 ```
 ```bash
-	- docker push aws_account_id.dkr.ecr.region.amazonaws.com/hello-repository
+	docker push aws_account_id.dkr.ecr.region.amazonaws.com/hello-repository
 ```
 
 5.	Create a terraform IAM user with programmtic access in your AWS account and extract the access & secret key & update the key in .aws file in local.
@@ -89,14 +89,15 @@
 
 3. Load Balancing:
 
-   -   Application Load Balancer (ALB) with:
+    -  Application Load Balancer (ALB).
    ![alb](./readme_images/alb.png)
 
-       -   Listeners and Target Groups.
+    -  Listeners and Target Groups.
     ![alb](./readme_images/alb_tg.png)
 
+    -  ALB resource map.
     ![alb](./readme_images/alb_rm.png)
-       -   Security Group.
+    -  Security Group.
 
 
 4. Links:
