@@ -43,8 +43,9 @@
 2.	Update input.tfvars with your AWS account details:
     -   Replace aws_account_num with your AWS account number.
     -   Update the Docker image name and version.
+    ![Input variables](./readme_images/input_vars.png)
 
-3.	Open the terminal and use terraform commands to deplot:
+3.	Open the terminal and use terraform commands to deploy:
     - Plan: You’ll see 35 AWS components will be created which is needed in this deployment.
 ```bash
         run terraform plan -var-file input.tfvars
@@ -92,9 +93,9 @@
    ![alb](./readme_images/alb.png)
 
        -   Listeners and Target Groups.
-    ![alb](image.png)
+    ![alb](./readme_images/alb_tg.png)
 
-    ![alt text](./readme_images/alb_rm.png)
+    ![alb](./readme_images/alb_rm.png)
        -   Security Group.
 
 
